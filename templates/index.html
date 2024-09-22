@@ -1,0 +1,27 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block title %}My Library{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="text-center"><strong>My Library</strong></h1>
+        {% if books %}
+            {% for book in books %}
+                {% if book %}
+                    <ul>
+                        <li>{{ book["title"] }} - {{ book["author"] }} - {{ book["rating"] }} - {{ book["review"] }}</li>
+                    </ul>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p>No books in the library</p>
+        {% endif %}
+        <hr>
+        <button class="btn btn-lg"><a href="{{ url_for('add')}}">Add New Book</a></button>
+    </div>
+{% endblock %}

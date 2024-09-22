@@ -1,0 +1,7 @@
+.jumbotron{
+    background-color: #f4511e;
+    color: wheat;
+    padding: 100px 100px;
+    height: 100vh;
+    background-image: linear-gradient(300deg, rgba(119, 78, 2, 0.425), rgba(133, 77, 5, 0.897)) !important;
+}

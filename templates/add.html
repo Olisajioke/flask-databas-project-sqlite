@@ -1,0 +1,23 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Add Books{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/add.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="bod">    
+    <div class="jumbotron gradient-background">
+        <h1>Welcome, Hope you enjoyed your last read?</h1>
+        <p class="ppp">You can record the book, the author and your rating below </p>
+    </div>
+    <div class="myform">
+        <h2><strong>Add Book</strong></h2>
+        {{ wtf.quick_form(form) }}
+        <hr>
+        <button class="btn btn-lg"><a href="{{ url_for('home') }}">Home Page</a></button>
+    </div>
+</div>
+{% endblock %}
